@@ -1,0 +1,26 @@
+package java_program0;
+import java.util.*;
+public class pro3 {
+	public static void main(String argc[]) {
+		Scanner in=new Scanner(System.in);
+		int m=in.nextInt();
+		int t=in.nextInt();
+		int s=in.nextInt();
+//		if(t!=0) {
+//			if(s%t==0) System.out.println(m-s/t);
+//			else { 
+//				if((int)(s/t)-m >= 0) System.out.println(0);
+//				else System.out.println(m-s/t-1);
+//			}
+//		}else {
+//			System.out.println(0);
+//		}
+	if(t==0) {
+		System.out.println(0);
+		return;
+	}
+	if(s%t==0) System.out.println(Math.max(0,m-s/t));
+	else System.out.println(Math.max(0, m-s/t-1));
+	
+	}
+}

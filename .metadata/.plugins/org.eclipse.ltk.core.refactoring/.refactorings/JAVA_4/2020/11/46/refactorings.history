@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;java_4.pro4_5_&apos; to &apos;pro4_5_2&apos;&#x0D;&#x0A;- Original project: &apos;JAVA_4&apos;&#x0D;&#x0A;- Original element: &apos;java_4.pro4_5_&apos;&#x0D;&#x0A;- Renamed element: &apos;java_4.pro4_5_2&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;pro4_5_&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;java_4{pro4_5_.java[pro4_5_" matchStrategy="1" name="pro4_5_2" qualified="false" references="true" similarDeclarations="false" stamp="1605251219541" textual="false" version="1.0"/>
+</session>

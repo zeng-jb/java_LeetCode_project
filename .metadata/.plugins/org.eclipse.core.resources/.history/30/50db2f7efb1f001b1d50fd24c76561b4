@@ -1,0 +1,74 @@
+package Java_3;
+
+abstract class Animal{
+	public String name;
+	public int age;
+	public float weight;
+	
+	public void showlnfo() {
+		System.out.println(name);
+		System.out.println(age);
+		System.out.println(weight);
+	}
+	public abstract int move();
+	public abstract void eat();
+}
+
+class Fish extends Animal{
+	
+	public void showlnfo() {
+
+	}
+	public int move() {
+	
+		return 0;
+	}
+	public void eat() {
+		
+	}
+	
+}
+
+class Bird extends Animal{
+	public void showlnfo() {
+		// TODO 自动生成的方法存根
+		
+	}
+
+	public int move() {
+		// TODO 自动生成的方法存根
+		return 0;
+	}
+
+	public void eat() {
+		// TODO 自动生成的方法存根
+		
+	}
+	
+}
+
+class Mammal extends Animal{
+
+	public void showlnfo() {
+		// TODO 自动生成的方法存根
+		
+	}
+
+	public int move() {
+		// TODO 自动生成的方法存根
+		return 0;
+	}
+
+	public void eat() {
+		// TODO 自动生成的方法存根
+		
+	}
+	
+}
+
+public class java_3 {
+	public static void main(String argc[]) {
+		
+	}
+	
+}

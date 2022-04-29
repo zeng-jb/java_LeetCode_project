@@ -1,0 +1,34 @@
+package leet;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Leet653 {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+
+	}
+
+	Set<Integer> set = new HashSet<>();
+	public boolean findTarget(TreeNode root, int k) {
+		return helper(root,k);
+    }
+
+	private boolean helper(TreeNode root, int k) {
+		// TODO 自动生成的方法存根
+		int target = k - root.val;
+		if(set.contains(target)) {
+			return true;
+		}
+		set.add(root.val);
+		boolean ans = false;
+		if(root.left != null) {
+			ans = helper(root.left, k);
+		}
+		if(root.right != null && ans) {
+			ans = helper(root.right, k);
+		}
+		return ans;
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;lanqiao2021.Leet1508&apos; to &apos;Main1508&apos;&#x0D;&#x0A;- Original project: &apos;JAVA_leetCode&apos;&#x0D;&#x0A;- Original element: &apos;lanqiao2021.Leet1508&apos;&#x0D;&#x0A;- Renamed element: &apos;lanqiao2021.Main1508&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Leet1508&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;lanqiao2021{Leet1508.java[Leet1508" matchStrategy="1" name="Main1508" qualified="false" references="true" similarDeclarations="false" stamp="1649073070769" textual="false" version="1.0"/>
+</session>

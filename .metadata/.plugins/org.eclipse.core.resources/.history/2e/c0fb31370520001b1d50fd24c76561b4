@@ -1,0 +1,57 @@
+package Java_3;
+
+class Rodent0{
+	public String name="Rodent";
+	public void show() {
+		System.out.println(name);
+	}
+}
+
+class Mouse extends Rodent0{
+	public String hisname="Mouse";
+	public Mouse(){
+		super.name=hisname;
+	}
+	
+	public void show() {
+		System.out.println(hisname);
+	}
+}
+
+class Gerbil extends Rodent0{
+	public String hisname="Gerbil";
+	public Gerbil(){
+		super.name=hisname;
+	}
+	
+	public void show() {
+		System.out.println(hisname);
+	}
+}
+
+class Hamster extends Rodent0{
+	public String hisname="Hamster";
+	public Hamster(){
+		super.name=hisname;
+	}
+	
+	public void show() {
+		System.out.println(hisname);
+	}
+}
+
+public class Rodent {
+
+	public static void main(String argc[]) {
+	
+		Rodent0 Mouse=new Mouse();
+		Mouse.show();
+		
+		Rodent0 Gerbil=new Gerbil();
+		Gerbil.show();
+		
+		Rodent0 Hamster=new Hamster();
+		Hamster.show();
+}
+}
+

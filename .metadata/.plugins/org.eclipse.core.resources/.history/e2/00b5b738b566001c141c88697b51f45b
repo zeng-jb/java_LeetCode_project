@@ -1,0 +1,39 @@
+package leet;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class Leet825 {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		int [] ages = {16,16};
+		System.out.println(numFriendRequests(ages));
+	}
+	
+	public static int numFriendRequests(int[] ages) {
+		int ans = 0;
+		Arrays.sort(ages);
+		int size = ages.length;
+		while(--size >= 1) {
+			int x = ages[size];
+			int size1 = size-1;
+			while(size1 >= 0) {
+				int y = ages[size1--];
+				if(x==y) {
+					ans+=2;
+					break;
+				}
+				if((y <= x*0.5+7) || (y > x) || (y>100 && x<100)) {
+					break;
+				}else {
+					ans++;
+				}
+			}
+		}
+		
+		return ans;
+    }
+}
