@@ -1,0 +1,32 @@
+package leet;
+
+import java.util.Stack;
+
+public class Leet1021 {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		String s = "(()())(())(()(()))";
+		Leet1021 obj = new Leet1021();
+		System.out.println(obj.removeOuterParentheses(s));
+	}
+
+	public String removeOuterParentheses(String s) {
+		Stack<Character> stack = new Stack<>();
+		StringBuilder ans = new StringBuilder();
+		for(int i=0;i<s.length();i++) {
+			char ch = s.charAt(i);
+			
+			if(ch == ')') {
+				stack.pop();
+			}
+			if(!stack.isEmpty()) {
+				ans.append(ch);
+			}
+			if(ch == '(') {
+				stack.push(ch);
+			}
+		}
+		return ans.toString();
+    }
+}
