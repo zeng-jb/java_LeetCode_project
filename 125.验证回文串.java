@@ -7,6 +7,7 @@
 // @lc code=start
 class Solution {
     public boolean isPalindrome(String s) {
+        /* 
         if(s == null) return true;
 
         s = s.toLowerCase();
@@ -19,6 +20,16 @@ class Solution {
         }
 
         return str.toString().equals(str.reverse().toString());
+        */
+        if(s.length() == 0) return true;
+        s = s.toLowerCase();
+        int n = s.length();
+        for(int i=0,j=n-1;i<j;i++,j--){
+            while(!Character.isLetterOrDigit(s.charAt(i)) && i < j) i++;
+            while(!Character.isLetterOrDigit(s.charAt(j)) && i < j) j--;
+            if(s.charAt(i) != s.charAt(j)) return false;
+        }
+        return true;
     }
 }
 // @lc code=end
