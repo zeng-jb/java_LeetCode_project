@@ -21,6 +21,7 @@ class Solution {
      * @param count2 记录 ）的个数
      * @param n       
      */
+    /* 
     public void backTracking(String res, int count1, int count2 , int n ){
         if(count1 > n || count2 > n) return;
         if(count1 == n && count2 == n){
@@ -33,6 +34,18 @@ class Solution {
             backTracking(res + ")", count1, count2+1, n);
         }
         return;
+    }
+    */
+    public void backTracking(String ans, int count1, int count2, int n){
+        if(count1 > n || count2 > n) return;
+        if(count1 == n && count2 == n){
+            list.add(ans);
+            return;
+        }
+        if(count1 >= count2){
+            backTracking(ans+"(", count1+1, count2, n);
+            backTracking(ans+")", count1, count2+1, n);
+        }
     }
 }
 // @lc code=end
