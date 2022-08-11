@@ -7,6 +7,7 @@
 // @lc code=start
 class Solution {
     // 前i天的最大收益 = max{前i-1天的最大收益，第i天的价格-前i-1天中的最小价格}
+    /*
     public int maxProfit(int[] prices) {
         int n = prices.length;
         int[] dp = new int[n];
@@ -19,6 +20,17 @@ class Solution {
             }
         }
         return dp[n-1];
+    }
+ */
+    public int maxProfit(int[] prices) {
+        int n = prices.length;
+        int sum = 0;
+        int minPrice = prices[0];
+        for(int i=1;i<n;i++){
+            sum = Math.max(sum, prices[i]-minPrice);
+            minPrice = Math.min(minPrice, prices[i]);
+        }
+        return sum;
     }
 }
 // @lc code=end

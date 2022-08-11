@@ -14,10 +14,14 @@ class Solution {
 
 相同的数异或为0: n ^ n => 0
 */
+        // int count = 0;
+        // for(int num : nums){
+        //     count ^= num;
+        // }
+        // return count;
+        
         int count = 0;
-        for(int num : nums){
-            count ^= num;
-        }
+        for(int num : nums) count ^= num;
         return count;
     }
 }

@@ -1,16 +1,16 @@
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.Stack;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 /*
- * @lc app=leetcode.cn id=104 lang=java
+ * @lc app=leetcode.cn id=103 lang=java
  *
- * [104] 二叉树的最大深度
+ * [103] 二叉树的锯齿形层序遍历
  */
 public class TreeNode {
     int val;
     TreeNode left;
-    TreeNode right;
+TreeNode right;
     TreeNode() {}
     TreeNode(int val) { this.val = val; }
     TreeNode(int val, TreeNode left, TreeNode right) {
@@ -36,42 +36,31 @@ public class TreeNode {
  * }
  */
 class Solution {
-    public int maxDepth(TreeNode root) {
-
-        // return root==null ? 0 : Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
-        /*
-        //BFS
-        if(root == null) return 0; 
-        int depth = 0;
-        Deque<TreeNode> q = new ArrayDeque();
-        q.offer(root);
-        while(!q.isEmpty()){
-            int size = q.size();
-            while(size-- > 0){
-                TreeNode node = q.poll();
-                if(node.left != null) q.offer(node.left);
-                if(node.right != null) q.offer(node.right);
-            }
-            depth++;
-        }
-        return depth;
-        */
-        int depth = 0;
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        Deque<TreeNode> q = new ArrayDeque<>();
+        List<List<Integer>> res = new ArrayList<>();
+        int level = 1;
         if(root != null){
-            Deque<TreeNode> q = new ArrayDeque<>();
-            q.add(root);
+            q.offer(root);
             while(!q.isEmpty()){
                 int size = q.size();
+                List<Integer> temp = new ArrayList<>();
                 for(int i=0;i<size;i++){
                     TreeNode t = q.poll();
+                    temp.add(t.val);
                     if(t.left != null) q.offer(t.left);
                     if(t.right != null) q.offer(t.right);
                 }
-                depth++;
+                if(level%2 == 0){
+                    // 是偶数层反转一下
+                    Collections.reverse(temp);
+                }
+                level++;
+                res.add(temp);
             }
         }
-        
-        return depth;
+
+        return res;
     }
 }
 // @lc code=end
