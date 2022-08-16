@@ -43,21 +43,23 @@ import java.util.*;
 class Solution {
     public int[] levelOrder(TreeNode root) {
         List<Integer> res = new ArrayList<>();
-
-        Deque<TreeNode> q = new ArrayDeque<>();
-        q.offer(root);
-        while(!q.isEmpty()){
-            int size = q.size();
-            for(int i=0;i<size;i++){
-                TreeNode temp = q.poll();
-                res.add( temp.val);
-                if(temp.left != null) q.offer(temp.left);
-                if(temp.right != null) q.offer(temp.right);
+        if(root != null){
+            Deque<TreeNode> q = new ArrayDeque<>();
+            q.offer(root);
+            while(!q.isEmpty()){
+                int size = q.size();
+                for(int i=0;i<size;i++){
+                    TreeNode temp = q.poll();
+                    res.add( temp.val);
+                    if(temp.left != null) q.offer(temp.left);
+                    if(temp.right != null) q.offer(temp.right);
+                }
             }
         }
 
 
-        return res.toArray();
+
+        return res.stream().mapToInt(Integer::intValue).toArray();
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

@@ -35,7 +35,29 @@
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int search(int[] nums, int target) {
+        int a=0,b=0,n= nums.length;
+        int l = 0, r = n-1;
+        if(n == 0) return 0;
+        while (l < r){
+            int mid = l + r >> 1;
+            // 确定左边界
+            if(nums[mid] >= target) r = mid;
+            else l = mid+1;
+        }
 
+        if(nums[r] != target) return 0;
+
+        a = r;
+        l=0;r=n-1;
+        while (l < r){
+            int mid = l + r + 1 >> 1;
+            if(nums[mid] <= target) l = mid;
+            else r = mid-1;
+        }
+
+        b = r;
+
+        return b-a+1;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

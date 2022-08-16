@@ -22,10 +22,24 @@
 // Related Topics 位运算 数组 哈希表 数学 二分查找 👍 301 👎 0
 
 
+import java.util.Arrays;
+
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int missingNumber(int[] nums) {
+//        int n = nums.length + 1;
+//        int sum = Integer.parseInt(String.valueOf(n*(n-1)/2));
+//
+//        return sum - Arrays.stream(nums).sum();
+        int left = 0;
+        int right = nums.length-1;
 
+        while (left <= right){
+            int mid = left + right >> 1;
+            if(nums[mid] == mid) left = mid +1;
+            else right = mid -1;
+        }
+        return left;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
